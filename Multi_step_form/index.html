@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>challenge</title>
+    <link rel="stylesheet" href="../projet6.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="steps">
+            <ul>
+                <li >
+                    <p  id="step1" onclick="gererstep(1,step1,step2,step3,step4)">1</p>
+                    <div >
+                        <p>STEP 1</p>
+                        <p>YOUR INFO</p>
+                    </div>
+                </li>
+                <li>
+                    <p id="step2" onclick="gererstep(2,step2,step1,step3,step4)">2</p>
+                    <div>
+                        
+                        <p>STEP 2</p>
+                        <p>SELECT PLAN</P>
+                    </div>
+                </li>
+                <li>
+                    <p id="step3" onclick="gererstep(3,step3,step1,step2,step4)">3</p>
+                    <div>
+                        <p>STEP 3</p>
+                        <p>ADD-ONS</p>
+                    </div>
+                </li>
+                <li>
+                    <p id="step4" onclick="totale();gererstep(4,step4,step1,step3,step2)">4</p>
+                    <div >
+                        <p>STEP 4</p>
+                        <p>SUMMARY</p>
+                        
+                    </div>
+                    </li>
+            </ul>
+        </div>
+<!-- ==================================================================================================== -->
+        <div class="step1" id="stepp1" >
+            <div class="title-top">
+                <h2>Personal info</h2>
+                <p>Please provide the following information</p>
+            </div>
+            <div>
+
+                <div>
+                    <label for="">Name</label>
+                    <input type="text" id="name">
+                </div>
+                <div>
+                    <label for="">Email Address</label>
+                    <input type="email" id="email">
+                </div>
+                <div>
+                    <label for="">Phone Number</label>
+                    <input type="text" id="phone">
+                </div>
+                
+            </div>
+            <button id="btn" onclick="gererstep(2,step2,step1,step3,step4);">Next Step</button>
+            
+        </div>
+<!-- =============================================================================================== -->
+        <div class="step2" id="stepp2">
+            <div class="title-top">
+                <h2>Select Your Plan</h2>
+                <p>You have the option of monthly or yearly billing</p>
+            </div>
+            
+            <div class="monthly" id="monthly">
+                <button class="plan " id="arcade" onclick="clickAbonne(this.id,'advanced','pro')" >
+                    <i class="fas fa-gamepad"></i>
+                    <div>
+                        <p>Arcade</p>
+                        <p id="pay1">$9/mo</p>
+                        <span hidden>2 months free</span>
+                    </div>
+                </button>
+                
+                <button class="plan" id="advanced" onclick="clickAbonne(this.id,'arcade','pro')">
+                    <i class="fa-solid fa-shield"></i>
+                    <div>
+                        <p>Advanced</p>
+                        <p id="pay2">$12/mo</p>
+                        <br><span hidden >2 months free</span>
+                    </div>
+                </button>
+                
+                <button class="plan" id="pro" onclick="clickAbonne(this.id,'arcade','advanced')">
+                    <i class="fa-solid fa-trophy"></i>
+                    <div>
+                        <p>Pro</p>
+                        <p id="pay3">$15/mo</p>
+                        <span hidden>2 months free</span>
+                    </div>
+                </button>
+            </div>
+
+            <div class="year-month">
+                <p id="month">Monthly</p>
+                <i class="fa-solid fa-toggle-on on" id="on" ></i>
+                <i class="fa-solid fa-toggle-off off " id="off"></i>
+                <p id="year">Yearly</p>
+            </div>
+            <button id="btn" onclick="gererstep(3,step3,step1,step2,step4);">Next Step</button>
+            <h5 id="goback" onclick="gererstep(1,step1,step3,step2,step4);">Go Back</h5>
+            
+        </div>
+<!-- ===================================================================================================== -->
+        <div class="step3" id="stepp3">
+            <div class="title-top">
+                <h2>Pick Add-Ons</h2>
+                <p>Add once help your gaming experience </p>
+            </div>
+
+            <div class="inputs">
+
+                <label  >
+                    <div for="online" class="input3" id="input3" onchange="clickinp('online',pay4)">
+                        <div class="box">
+                            <input type="checkbox" id="online" >
+                            <label for="online">
+                                <p>Online service</p>
+                                <h6 >Access to multiplayer games</h6>
+                            </label>
+                        </div>
+                        <h5 id="pay4">+$1/mo</h5>
+                    </div>
+                </label>
+                
+                <label >
+                    <div for="larger" class="input3" id="input3" onchange="clickinp('larger',pay5)">
+                        <div class="box">
+                            <input type="checkbox" id="larger" >
+                            <label for="larger">
+                                <p>Larger storage</p>
+                                <h6 for="larger">Extra 1TB of cloud save</h6>
+                            </label>
+                        </div>
+                        <h5 id="pay5">+$2/mo</h5>
+                    </div>
+                </label>
+
+                <label  >
+                    <div for="custom" class="input3" id="input3" onchange="clickinp('custom',pay6)">
+                        <div class="box">
+                            <input type="checkbox" id="custom" >
+                            <label for="custom">
+                                <p>Customizable profile</p>
+                                <h6 >Custom theme on your profile</h6>
+                            </label>
+                        </div>
+                        <h5 id="pay6">+$3/mo</h5>
+                    </div>
+                </label>
+            </div>
+            <button id="btn" onclick="totale();gererstep(4,step4,step1,step2,step3);" class="submit">Next Step</button>
+            <h5 id="goback" onclick="gererstep(2,step2,step3,step1,step4);">Go Back</h5>
+        </div>
+<!-- ========================================================================================================== -->
+        <div class="step4" id="stepp4">
+            <div class="title-top">
+                <h2>Finishing up</h2>
+                <p>Add once help your gaming experience </p>
+            </div>
+
+            <div class="menu">
+                <div>
+                    <div>
+                        <p  id="menuPlan">arcade(Monthly)</p>
+                        <a href="#" id="change" style="color: rgb(165, 165, 165);font-size: 14px;" >change</a>
+                    </div>
+                    <p id="pricePlan">$9</p>
+                </div>
+                <p class="ligne"></p>
+                
+                <div id="MenuAdd_Once">
+                    
+                </div>
+
+                <div>
+                    <p class="menuInf">Total</p>
+                    <h3 class="price" id="total"></h3>
+                </div>
+
+            </div>
+
+            <button id="btn" onclick="confirmer()">Confirmer</button>
+            <h5 id="goback" onclick="gererstep(3,step3,step1,step2,step4);">Go Back</h5>
+        </div>
+
+        <div id="step5">
+
+            <div><i class="fa-solid fa-circle-check"></i></div>
+
+            <div class="thanks"><h3>Thank you!</h3></div>
+            <div>Thank you for confirming your subscription,We hope you have fun using my platform,if you need question or you have a problem,contact me at ramdaniwassim8@gmail.com </div>
+        </div>
+    </div>
+    <script src="../projet6.js"></script>
+</body>
+</html>

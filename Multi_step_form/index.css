@@ -1,0 +1,345 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-weight: 600
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/* ------------------ */
+body{
+    background: hsl(229, 24%, 87%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.container{
+    width: 700px;
+    height: 420px;
+    background:white;
+    box-shadow: 5px 10px 10px hsl(230, 28%, 84%);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.steps{
+    background-image: url(../image/bg-bottom.svg),url(../image/bg-top.svg);
+    background-repeat: no-repeat;
+    background-position: right top,left bottom;
+    background-color: hsl(240, 50%, 95%);
+    height: 95%;
+    width:200px ;
+    margin: 10px;
+    border-radius: 10px;
+}
+ul{
+    list-style:  none;
+    padding: 5px;
+}
+ul li {
+    font-size: 12px;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+}
+li > p{
+    
+    
+    font-size: 12px;
+    border: 1.6px solid hsl(240, 75%, 89%);
+    border-radius: 50%;
+    width: 20px;
+    height: 16px;
+    text-align: center;
+    padding-top: 4px;
+    font-weight: 600;
+    cursor: pointer;
+}
+li div>:first-child{
+    font-size:13px;
+    font-weight: 600;
+    color: hsl(240, 29%, 34%);
+}
+/* **************************************************************** */
+.step1,.step2,.step3,.step4 {
+    
+    position: relative;
+    width: 60%;
+    height: 100%;
+    
+}
+.step1 div{
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    width: 100%;
+}
+
+h2{
+    color:hsl(240, 53%, 25%);
+    padding-top: 30px;
+}
+h2+p{
+    padding-top: 5px;
+}
+
+#btn{
+    position: absolute;
+    right: 60px;
+    bottom: 30px;
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: 600;
+    background-color:hsl(240, 53%, 25%) ;
+    color: aliceblue;
+    border: none;
+    cursor: pointer;
+}
+#goback{
+    position: absolute;
+    left: 3px;
+    bottom: 40px;
+    color: rgb(163, 162, 162);
+    cursor: pointer;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 900;
+    font-size: 14px;
+}
+button:hover{
+    transform: scale(1.07);
+    transition: .8;
+}
+.step1 div label{
+    padding: 2px 0px;
+    color:hsl(240, 52%, 39%) ;
+    font-weight: 600;
+    font-size: 14px;
+}
+input{
+    border-radius: 5px;
+    border: 2px solid hsl(240, 31%, 20%);
+    height: 30px;
+    padding-left: 7px;
+    font-size: 16px;
+    width: 85%;
+}
+i{
+    font-size: 25px;
+    color: black;
+}
+
+/* ----------------------------------- */
+.step2 >:first-child,.step3 >:first-child{
+    padding-top: 20px;
+}
+.monthly{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    
+}
+.yearly{
+    display: none;
+}
+.fas{
+    color: coral;
+}
+.fa-shield{
+    color: darkolivegreen;
+}
+.fa-trophy{
+    color: hsl(240, 52%, 39%);
+}
+
+.plan {
+    height: 130px;
+    width: 110px;
+    border: 2px solid rgb(218, 222, 226);
+    box-shadow: 1px 1px 5px hsla(240, 23%, 68%, 0.561);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 40px;
+    border-radius: 7px;
+    background-color: rgb(243, 243, 243);
+}
+.plan div{
+    height: 30%;
+}
+.plan div span{
+    font-size: 11px;
+    color:hsl(240, 36%, 53%) ;
+    font-weight: 600;
+}
+.plan div >:first-child{
+    font-size: 14px;
+    color:hsl(240, 52%, 39%) ;
+    font-weight: 600;
+}
+
+.plan div >:first-child~p{
+    font-size: 12px;
+    margin-top: 3px;
+    font-weight: 600;
+    color: hsl(240, 9%, 49%)
+}
+
+.year-month{
+    display: flex;
+    justify-content: center;
+    background-color:hsl(240, 80%, 98%)  ;
+    border-radius: 20px;
+    padding: 5px 0;
+    margin: 20px 35px 0 0 ;
+    font-weight: 600;
+    color: gray;
+}
+#month{
+color: hsl(240, 56%, 34%);
+}
+.year-month *{
+    padding: 0 5px;
+}
+.on,.off{
+    color:hsl(240, 56%, 34%) ;
+    cursor: pointer;
+}
+/* -------------------------------------------- */
+.inputs{
+    margin-top: 20px;
+}
+.input3{
+    display: flex;
+    border: 1px solid rgb(228, 226, 226);
+    border-radius: 5px;
+    border-width: 1.4px;
+    padding: 12px;
+    width: 70%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+.box{
+    display: flex;
+    gap: 15px;
+}
+.input3  input{
+    width: auto;
+    transform: scale(1.2);
+    margin-left: 6px;
+    
+}
+.box label p{
+    font-weight: 600;
+    color:hsl(240, 52%, 34%) ;
+    font-size: 14px;
+    
+}
+.box label h6{
+    color: gray;
+}
+.input3 h5{
+    color: hsl(240, 52%, 55%);
+}
+/* =================================================================== */
+
+.step4{
+    flex-direction: column;
+    gap: 20px;
+
+    
+}
+.step4>:first-child{
+    padding-top: 20px;
+}
+.menu{
+    background-color:hsl(240, 80%, 98%)  ;
+    height: 50%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 10px;
+    border-radius: 10px;
+    font-weight: 600;
+    position: relative;
+}
+
+.menu > div{
+    display: flex;
+    justify-content:space-between;
+    /* gap: 80px; */
+    /* align-items: center; */
+    padding: 0 35px;
+}
+.ligne{
+    border-bottom: 1px solid gainsboro;
+    width: 90%;
+    margin: 0 auto;
+    
+}
+
+.menu>:last-child{
+    
+    background-color:hsl(240, 70%, 90%) ;
+    padding: 20px 0;
+    border-bottom-right-radius: 10PX;
+    border-bottom-left-radius: 10PX;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.menu div div p{
+    color:hsl(240, 61%, 34%);
+    
+
+}
+#MenuAdd_Once{
+    flex-direction: column;
+    gap: 10px;
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    position: relative;
+    height: 50px;
+}
+
+#MenuAdd_Once div{
+    display: flex;
+    justify-content:space-between;
+    /* align-items: center; */
+    /* gap: 230px; */
+    
+}
+.price{
+    position: absolute;
+    right: 35px;
+    
+}
+
+.menuInf{
+    position: absolute;
+    left: 35px;
+    /* bottom: 5px; */
+    
+}
+/* --------------------------------------------------------------- */
+#step5{
+    display: none;
+    text-align: center;
+    width: 60%;
+    
+    flex-direction: column;
+    justify-content: space-between;
+    color:hsl(240, 47%, 32%) ;
+    gap: 10px;
+    margin-right: 30px;
+}
+.fa-circle-check{
+    color:darkgreen;
+    font-size: 40px;
+}
